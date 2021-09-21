@@ -1,25 +1,25 @@
 package com.example.demo.annotations.classAnnotations.tableGeneration.dataObjectRealted.tableInfo
 
 import com.example.demo.annotations.classAnnotations.tableGeneration.dataObjectRealted.annotations.DataObject
+import kotlin.reflect.KClass
+import kotlin.reflect.full.findAnnotation
 
 class TableNameInfo : ITableNameInfo {
 
-    override fun getTableNameFromDataObjectAnnotation(dataObjectClass: Class<DataObject>): String {
-        var tableName = getTableNameFromAnnotation(dataObjectClass)
+    override fun getTableNameFromDataObjectAnnotation(dataObjectKClass: KClass<DataObject>): String {
+        var tableName = getTableNameFromAnnotation(dataObjectKClass)
         if (tableName.isEmpty()) {
-            tableName = getDefaultTableName(dataObjectClass)
+            tableName = getDefaultTableName(dataObjectKClass)
         }
         return tableName
     }
 
-    private fun getDefaultTableName(dataObjectClass: Class<DataObject>): String {
-        return "${dataObjectClass.simpleName.lowercase()}s"
+    private fun getDefaultTableName(dataObjectKClass: KClass<DataObject>): String {
+        return "${dataObjectKClass.simpleName!!.lowercase()}s"
     }
 
-    private fun getTableNameFromAnnotation(dataObjectClass: Class<DataObject>): String {
+    private fun getTableNameFromAnnotation(dataObjectKClass: KClass<DataObject>): String {
         //Find the annotation "DataObject" from the class object to retrieve its constructor parameters
-        val annotation =
-            dataObjectClass.declaredAnnotations.find { annotation -> annotation is DataObject } as DataObject
-        return annotation.tableName
+        return dataObjectKClass.findAnnotation<DataObject>()!!.tableName
     }
 }

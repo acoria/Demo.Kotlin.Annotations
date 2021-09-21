@@ -3,9 +3,10 @@ package com.example.demo.annotations.classAnnotations.tableGeneration.mySQLGener
 import com.example.demo.annotations.classAnnotations.tableGeneration.dataObjectRealted.annotations.DataObject
 import com.example.demo.annotations.classAnnotations.tableGeneration.mapper.DataObjectToTableMetaMapper
 import com.example.demo.annotations.classAnnotations.tableGeneration.mySQLGeneration.MySQLTableGenerator
+import kotlin.reflect.KClass
 
 class MySQLGeneratorFacade : IMySQLGeneratorFacade {
-    override fun createMySQLTable(dataObjectClass: Class<DataObject>): String {
-        return MySQLTableGenerator(DataObjectToTableMetaMapper(dataObjectClass).map()).generate()
+    override fun createMySQLTable(dataObjectKClass: KClass<DataObject>): String {
+        return MySQLTableGenerator(DataObjectToTableMetaMapper(dataObjectKClass).map()).generate()
     }
 }
