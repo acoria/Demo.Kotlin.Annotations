@@ -11,7 +11,7 @@ class DataObjectToTableMetaMapper(private val dataObjectClass: Class<DataObject>
     private val fieldMetas: List<FieldMeta> = createFieldMetasFromDataObject()
 
     private fun createTableMeta(): TableMeta {
-        return TableMeta(TableNameInfo().getTableNameFromDataObject(dataObjectClass), fieldMetas)
+        return TableMeta(TableNameInfo().getTableNameFromDataObjectAnnotation(dataObjectClass), fieldMetas)
     }
 
     private fun createFieldMetasFromDataObject(): List<FieldMeta> {
