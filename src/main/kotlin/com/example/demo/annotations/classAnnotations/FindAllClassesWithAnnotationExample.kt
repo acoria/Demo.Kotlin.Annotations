@@ -1,7 +1,6 @@
 package com.example.demo.annotations.classAnnotations
 
-import com.example.demo.annotations.classAnnotations.tableGeneration.annotations.DataObject
-import com.example.demo.annotations.classAnnotations.tableGeneration.api.MySQLGeneratorFacade
+import com.example.demo.annotations.classAnnotations.tableGeneration.dataObjectRealted.annotations.DataObject
 import org.reflections.Reflections
 
 class FindAllClassesWithAnnotationExample {

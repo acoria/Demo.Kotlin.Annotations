@@ -1,6 +1,6 @@
-package com.example.demo.annotations.classAnnotations.tableGeneration.tableInfo
+package com.example.demo.annotations.classAnnotations.tableGeneration.dataObjectRealted.tableInfo
 
-import com.example.demo.annotations.classAnnotations.tableGeneration.annotations.DataObject
+import com.example.demo.annotations.classAnnotations.tableGeneration.dataObjectRealted.annotations.DataObject
 
 class TableNameInfo : ITableNameInfo {
 

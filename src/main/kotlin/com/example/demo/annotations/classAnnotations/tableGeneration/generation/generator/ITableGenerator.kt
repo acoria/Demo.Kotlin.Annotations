@@ -1,4 +1,4 @@
-package com.example.demo.annotations.classAnnotations.tableGeneration.generator
+package com.example.demo.annotations.classAnnotations.tableGeneration.generation.generator
 
 interface ITableGenerator {
     fun generateCreateTable()

@@ -1,4 +1,4 @@
-package com.example.demo.annotations.classAnnotations.tableGeneration.meta
+package com.example.demo.annotations.classAnnotations.tableGeneration.generation.meta
 
 class TableMeta(
     val name: String,

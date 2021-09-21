@@ -1,6 +1,6 @@
-package com.example.demo.annotations.classAnnotations.tableGeneration.meta
+package com.example.demo.annotations.classAnnotations.tableGeneration.generation.meta
 
-import com.example.demo.annotations.classAnnotations.tableGeneration.mySQL.MySQLFieldType
+import com.example.demo.annotations.classAnnotations.tableGeneration.mySQLGeneration.MySQLFieldType
 
 class FieldMeta(
     val name: String,

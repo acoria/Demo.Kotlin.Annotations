@@ -1,7 +1,6 @@
 package com.example.demo.annotations
 
-import com.example.demo.annotations.classAnnotations.FindAllClassesWithAnnotationExample
-import com.example.demo.annotations.classAnnotations.tableGeneration.environmentCreator.EnvironmentCreator
+import com.example.demo.annotations.classAnnotations.tableGeneration.environment.EnvironmentCreator
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean

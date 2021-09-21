@@ -1,7 +1,7 @@
-package com.example.demo.annotations.classAnnotations.tableGeneration.mySQL
+package com.example.demo.annotations.classAnnotations.tableGeneration.mySQLGeneration
 
-import com.example.demo.annotations.classAnnotations.tableGeneration.generator.ITableGenerator
-import com.example.demo.annotations.classAnnotations.tableGeneration.meta.TableMeta
+import com.example.demo.annotations.classAnnotations.tableGeneration.generation.generator.ITableGenerator
+import com.example.demo.annotations.classAnnotations.tableGeneration.generation.meta.TableMeta
 import java.lang.StringBuilder
 
 class MySQLTableGenerator(private val tableMeta: TableMeta) : ITableGenerator {

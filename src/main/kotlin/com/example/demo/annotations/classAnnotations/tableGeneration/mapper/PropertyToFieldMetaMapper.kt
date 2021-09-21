@@ -1,8 +1,10 @@
 package com.example.demo.annotations.classAnnotations.tableGeneration.mapper
 
-import com.example.demo.annotations.classAnnotations.tableGeneration.annotations.DataObjectId
-import com.example.demo.annotations.classAnnotations.tableGeneration.mySQL.MySQLFieldType
-import com.example.demo.annotations.classAnnotations.tableGeneration.meta.FieldMeta
+import com.example.demo.annotations.classAnnotations.tableGeneration.dataObjectRealted.annotations.DataObjectId
+import com.example.demo.annotations.classAnnotations.tableGeneration.dataObjectRealted.annotations.DataObjectPrimaryKey
+import com.example.demo.annotations.classAnnotations.tableGeneration.dataObjectRealted.annotations.isMetaAnnotationPresent
+import com.example.demo.annotations.classAnnotations.tableGeneration.mySQLGeneration.MySQLFieldType
+import com.example.demo.annotations.classAnnotations.tableGeneration.generation.meta.FieldMeta
 import java.lang.reflect.Field
 
 class PropertyToFieldMetaMapper {
@@ -13,9 +15,21 @@ class PropertyToFieldMetaMapper {
         if (property.isAnnotationPresent(DataObjectId::class.java)) {
             nullable = false
             autoIncrement = true
-            isPrimaryKey = true
         }
+
+        isPrimaryKey = determineIsPrimaryKey(property)
+
         return FieldMeta(property.name, getType(property), getLength(property), nullable, autoIncrement, isPrimaryKey)
+    }
+
+    private fun determineIsPrimaryKey(property: Field): Boolean {
+        //is property annotated
+        if (property.isAnnotationPresent(DataObjectPrimaryKey::class.java)) {
+            return true
+        }
+
+        //is one of its annotations annotated
+        return property.isMetaAnnotationPresent<DataObjectPrimaryKey>()
     }
 
     private fun getType(property: Field): MySQLFieldType {

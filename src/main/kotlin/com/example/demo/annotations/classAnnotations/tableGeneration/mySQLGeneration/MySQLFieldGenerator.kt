@@ -1,7 +1,7 @@
-package com.example.demo.annotations.classAnnotations.tableGeneration.mySQL
+package com.example.demo.annotations.classAnnotations.tableGeneration.mySQLGeneration
 
-import com.example.demo.annotations.classAnnotations.tableGeneration.generator.IFieldGenerator
-import com.example.demo.annotations.classAnnotations.tableGeneration.meta.FieldMeta
+import com.example.demo.annotations.classAnnotations.tableGeneration.generation.generator.IFieldGenerator
+import com.example.demo.annotations.classAnnotations.tableGeneration.generation.meta.FieldMeta
 
 class MySQLFieldGenerator : IFieldGenerator {
 

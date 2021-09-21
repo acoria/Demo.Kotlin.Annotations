@@ -1,10 +1,10 @@
 package com.example.demo.annotations.classAnnotations.tableGeneration.mapper
 
-import com.example.demo.annotations.classAnnotations.tableGeneration.annotations.DataObject
-import com.example.demo.annotations.classAnnotations.tableGeneration.meta.FieldMeta
-import com.example.demo.annotations.classAnnotations.tableGeneration.meta.IToTableMetaMapper
-import com.example.demo.annotations.classAnnotations.tableGeneration.meta.TableMeta
-import com.example.demo.annotations.classAnnotations.tableGeneration.tableInfo.TableNameInfo
+import com.example.demo.annotations.classAnnotations.tableGeneration.dataObjectRealted.annotations.DataObject
+import com.example.demo.annotations.classAnnotations.tableGeneration.generation.meta.FieldMeta
+import com.example.demo.annotations.classAnnotations.tableGeneration.generation.meta.IToTableMetaMapper
+import com.example.demo.annotations.classAnnotations.tableGeneration.generation.meta.TableMeta
+import com.example.demo.annotations.classAnnotations.tableGeneration.dataObjectRealted.tableInfo.TableNameInfo
 
 class DataObjectToTableMetaMapper(private val dataObjectClass: Class<DataObject>) : IToTableMetaMapper {
 
