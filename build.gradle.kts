@@ -22,7 +22,8 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.reflections/reflections
 	implementation("org.reflections:reflections:0.9.12")
 
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation("io.mockk:mockk:1.12.0")
 }
 
 tasks.withType<KotlinCompile> {

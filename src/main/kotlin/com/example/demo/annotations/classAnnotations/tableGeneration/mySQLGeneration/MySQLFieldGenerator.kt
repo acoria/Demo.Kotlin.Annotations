@@ -15,7 +15,7 @@ class MySQLFieldGenerator : IFieldGenerator {
 
     private fun generateAutoIncrement(fieldMeta: FieldMeta): String {
         return if (fieldMeta.autoIncrement) {
-            "AUTO_INCREMENT"
+            sqlAutoIncrement
         } else {
             ""
         }
@@ -23,9 +23,15 @@ class MySQLFieldGenerator : IFieldGenerator {
 
     private fun generateNullable(fieldMeta: FieldMeta): String {
         return if (fieldMeta.nullable) {
-            "DEFAULT NULL"
+            sqlNullable
         } else {
-            "NOT NULL"
+            sqlNotNullable
         }
+    }
+
+    companion object{
+        const val sqlAutoIncrement = "AUTO_INCREMENT"
+        const val sqlNullable = "DEFAULT NULL"
+        const val sqlNotNullable = "NOT NULL"
     }
 }

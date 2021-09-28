@@ -35,8 +35,10 @@ class PropertyToFieldMetaMapper {
     private fun getType(property: Field): MySQLFieldType {
         return when (property.type.name) {
             "java.lang.String" -> MySQLFieldType.VARCHAR
+            "java.lang.Long" -> MySQLFieldType.INT
             "int" -> MySQLFieldType.INT
-            else -> throw RuntimeException("Something wrong with the DbFieldType enum")
+            "long" -> MySQLFieldType.INT
+            else -> throw RuntimeException("No matching type in ${MySQLFieldType::class.simpleName} found for ${property.type.name}")
         }
     }
 
